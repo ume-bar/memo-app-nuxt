@@ -1,0 +1,15 @@
+{
+    "label": {
+      "otherError": "エラー",
+      "pageNotFound": "ページはありません",
+      "pgbmon": "Pg バランスモニター"
+    },
+    "button": {},
+    "tooltip": {
+      "menu": "メニュー"
+    },
+    "message": {
+      "otherError": "エラーが発生しました",
+      "pageNotFound": "指定のページはありません"
+    }
+  }

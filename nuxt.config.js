@@ -37,9 +37,54 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    '@nuxtjs/axios',
+    [
+      'nuxt-i18n',
+      {
+        locales: [
+          {
+            code: 'en',
+            iso: 'en',
+            file: 'en.json'
+          },
+          {
+            code: 'ja',
+            iso: 'ja',
+            file: 'ja.json'
+          }
+        ],
+        defaultLocale: 'ja',
+        lazy: true,
+        langDir: 'lang/'
+      }
+    ]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  }
+}
+module.exports = {
+  mode: 'universal',
+  frontend: {
+    host: '0.0.0.0',
+    port: '8080'
+  },
+  backend: {
+    host: '0.0.0.0',
+    port: '3000'
+  },
+  env: {
+    apiUrl: 'http://localhost:3000'
   }
 }
