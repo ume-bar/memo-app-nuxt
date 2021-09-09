@@ -4,7 +4,7 @@ const { Nuxt, Builder } = require('nuxt')
 const compression = require('compression')
 const cors = require('cors')
 // Import and Set Nuxt.js options
-const config = require('../nuxt.config.js')
+const config = require('../../nuxt.config.js/index.js')
 config.dev = process.env.NODE_ENV !== 'production'
 // Init Nuxt.js
 const nuxt = new Nuxt(config)
