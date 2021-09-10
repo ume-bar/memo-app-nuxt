@@ -11,6 +11,11 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
+    script: [
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+      }
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -78,11 +83,11 @@ module.exports = {
   mode: 'universal',
   frontend: {
     host: '0.0.0.0',
-    port: '8080'
+    port: '3000'
   },
   backend: {
     host: '0.0.0.0',
-    port: '3000'
+    port: '5432'
   },
   env: {
     apiUrl: 'http://localhost:3000'
