@@ -66,3 +66,42 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+<!-- <template>
+ <div class="page">
+   <Progressbar
+     :count="todos.length"
+     :max="max"
+   />
+   <Form @listAdded="newTodo" />
+   <List class="list" :todos="todos" />
+ </div>
+</template>
+
+<script>
+import List from '../components/List.vue'
+import Form from '../components/From.vue'
+import Progressbar from '../components/Progressbar.vue'
+
+export default {
+ components: {
+   List,
+   Form,
+   Progressbar,
+ },
+ data () {
+   return {
+     todos: ['メモを入力して下さい'],
+     max: 10,
+   }
+ },
+ methods: {
+   newTodo (todo) {
+     this.todos.push(todo);
+   },
+ },
+}
+</script>
+
+<style lang="scss">
+</style> -->

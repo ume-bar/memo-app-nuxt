@@ -1,38 +1,29 @@
 <template>
- <div class="page">
-   <Progressbar
-     :count="todos.length"
-     :max="max"
-   />
-   <Form @listAdded="newTodo" />
-   <List class="list" :todos="todos" />
- </div>
+  <ul>
+    <li>
+      <button @click="addMemo()">メモ</button>
+    </li>
+    <li v-for="(memo, index) in memos" :key="index">
+      <input v-model="memos[index]" />
+      <button @click="deleteMemo(index)">×</button>
+    </li>
+  </ul>
 </template>
 
 <script>
-import List from '../components/List.vue'
-import Form from '../components/From.vue'
-import Progressbar from '../components/Progressbar.vue'
-
 export default {
- components: {
-   List,
-   Form,
-   Progressbar,
- },
- data () {
-   return {
-     todos: ['API作成'],
-     max: 10,
-   }
- },
- methods: {
-   newTodo (todo) {
-     this.todos.push(todo);
-   },
- },
+  data() {
+    return {
+      memos: []
+    }
+  },
+  methods: {
+    addMemo () {
+      this.memos.push('')
+    },
+    deleteMemo (index) {
+      this.memos.splice(index, 1)
+    }
+  }
 }
 </script>
-
-<style lang="scss">
-</style>
