@@ -1,3 +1,6 @@
+import pgPromise from "pg-promise";
+
+const pgp = pgPromise({});
 exports.dbConf = [
     {
         host: "127.0.0.1",
@@ -9,3 +12,4 @@ exports.dbConf = [
         query_timeout: 60000 // 60sec
     }
 ]
+export const sqlExecuter = pgp(config.db);
