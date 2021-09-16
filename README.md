@@ -105,3 +105,23 @@ export default {
 
 <style lang="scss">
 </style> -->
+
+<template>
+  <div id = "app">
+    <h1>メモ　作成</h1>
+  <ul>
+    <button @click="addMemo()">メモ</button>
+      <div v-for="(memo, index) in memos" :key="index">
+        <textarea v-model="memos[index]" placeholder="内容を入力" @keyup.enter="addMemo"></textarea>
+        <span :class="{ done: memo.done }">{{ memo.text }}</span>
+        <button @click="deleteMemo(memo)">削除</button>
+  </ul>
+</template>
+
+export default Vue.extend({
+computed: {
+memos(): Array<Memo> {
+// リスト（memos）を取得
+// ※ memosStore. と打つと、インテリセンス（入力補完機能）が働く
+return memosStore.memos
+}

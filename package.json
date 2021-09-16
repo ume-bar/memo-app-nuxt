@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest ./test/store/statistics.spec.js",
     "nyc": "nyc mocha --timeout 20000 ./test/routers/*.spec.js"
   },
   "dependencies": {
+    "@nuxt/typescript-runtime": "^2.1.0",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/tailwindcss": "^4.2.1",
     "apexcharts": "^3.28.1",
@@ -36,12 +37,14 @@
     "supertest": "^6.1.6",
     "vue-apexcharts": "^1.6.2",
     "vue-i18n": "^8.25.0",
+    "webpack-cli": "^4.8.0",
     "yarn": "^1.22.11"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.7",
     "@nuxt/typescript-build": "^2.1.0",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "vuex-module-decorators": "^1.0.1"
   },
   "jest": {
     "transform": {
